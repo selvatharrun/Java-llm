@@ -1,9 +1,8 @@
 package Data;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
+import java.util.*;
 
 public class DataReader {
     private final int rows = 28;
@@ -11,7 +10,7 @@ public class DataReader {
 
     public List<Image> readData(String path){
 
-        ArrayList<Image> imglst = new ArrayList<>();
+        List<Image> imglst = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader((new FileReader(path)))){
             String line;
@@ -23,18 +22,19 @@ public class DataReader {
                 int label= Integer.parseInt(chars[0]);
                 int ind =1;
 
-                for(int i=0;i<rows;i++){
-                    for(int j=0;j<cols;j++){
+                for(int i=0;i<rows;i++) {
+                    for (int j = 0; j < cols; j++) {
                         data[i][j] = (double) Integer.parseInt(chars[ind]);
                         ind++;
                     }
                 }
-            }
 
-            imglst.add(new Image(data,label));
+                imglst.add(new Image(label,data));
+                System.out.println(imglst);
+            }
         }
-        catch(Exception e){
-            return null;
+        catch (Exception e) {
+            e.printStackTrace();
         }
         return imglst;
     }

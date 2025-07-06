@@ -1,6 +1,6 @@
 package Data;
 
-public class image {
+public class Image {
     double[][] data;
     int label;
 
@@ -12,7 +12,7 @@ public class image {
         return data;
     }
 
-    public image(int label, double[][] data) {
+    public Image(int label, double[][] data) {
         this.label = label;
         this.data = data;
     }
