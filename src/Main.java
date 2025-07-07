@@ -12,6 +12,6 @@ public class Main {
 
         List<Image> lst = new DataReader().readData(path);
 
-        System.out.println(lst.get(0));
+        //System.out.printf(lst.get(0).toString()); //this is to print how the training data looks like.
     }
 }

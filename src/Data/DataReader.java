@@ -30,7 +30,6 @@ public class DataReader {
                 }
 
                 imglst.add(new Image(label,data));
-                System.out.println(imglst);
             }
         }
         catch (Exception e) {
